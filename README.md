@@ -1,3 +1,7 @@
+## About
+
+It is my CV, launched on https://eresko-egor-cv.netlify.app/
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
