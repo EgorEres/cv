@@ -1,0 +1,42 @@
+---
+import H1 from './H1.astro'
+---
+
+<div>
+  <H1 title="Languages:" />
+  <ul>
+    <li>
+      <span>Russian</span>
+      <div class="dots" />
+      <span>native</span>
+    </li>
+    <li>
+      <span>English</span>
+      <div class="dots" />
+      <span>intermediate</span>
+    </li>
+    <li>
+      <span>Chinese</span>
+      <div class="dots" />
+      <span>beginner</span>
+    </li>
+  </ul>
+</div>
+<style>
+	ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+  }
+
+  .dots {
+    border-bottom: 1px dashed #fff;
+    width: 100%;
+    margin: 10px;
+  }
+</style>

@@ -1,81 +1,76 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import H1 from '../components/H1.astro';
+import Avatar from '../components/avatar/Avatar.astro';
+import History from '../components/History.astro';
+import Details from '../components/Details.astro';
+import Skills from '../components/Skills.astro';
+import Languages from '../components/Languages.astro'
+import Education from '../components/Education.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout>
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		<div class="left-container">
+			<Avatar />
+			<H1 title="Profile" />
+			<p class="description">
+				I am from a small town in the center of Russia. My
+				experience as a frontend developer is listed below. But before
+				becoming a programmer, I have worked in various positions
+				like loading wagons, digital seller, financial manager in a large
+				Russian bank. Finally working as a frontend developer has
+				opened up great opportunities for me. Now I can travel and
+				currently live in Phuket, Thailand. Married but no children yet. I
+				am interested in investments.
+			</p>
+
+			<History />
+		</div>
+
+		<div class="right-container">
+			<Details />
+			<Skills />
+			<Languages />
+			<Education />
+		</div>
 	</main>
 </Layout>
 
 <style>
 	main {
+		display: flex;
+		width: 120ch;
 		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
+    border-radius: 10px;
+    box-shadow: 7px 4px 16px 10px #2f3e57;
 	}
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
 		margin: 0;
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+
+	.left-container {
+		flex: 5;
+		padding: 40px;
+		background-color: #F6F6F6;
+		border-radius: 10px 0 0 10px;
 	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
+
+	.right-container {
+		flex: 3;
+    padding: 40px;
+		padding-top: 190px;
+    background: #082a4d;
+		color: #fff;
+		border-radius: 0 10px 10px 0;
 	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+
+	.description {
+    text-indent: 20px;
+    margin: 0;
+    font-size: 20px;
+    line-height: 24px;
 	}
 </style>
